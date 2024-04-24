@@ -18,6 +18,9 @@ const config: Config = {
       },
       colors: {
         primary: "#FFA56A",
+        neutral_light: "#C1C1C1",
+        neutral_dark: "#22211E",
+        neutral_darker: "#1E1D1B",
       },
     },
   },
