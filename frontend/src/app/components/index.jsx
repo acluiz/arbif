@@ -1,3 +1,4 @@
 import { Container } from "./Container/Container";
+import { Input } from "./Input/Input";
 
-export { Container };
+export { Container, Input };

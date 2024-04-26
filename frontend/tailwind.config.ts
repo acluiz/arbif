@@ -15,9 +15,11 @@ const config: Config = {
       },
       maxWidth: {
         "330": "330px",
+        "475": "475px",
       },
       colors: {
         primary: "#FFA56A",
+        neutral_lighter: "#F8FAFC",
         neutral_light: "#C1C1C1",
         neutral_dark: "#22211E",
         neutral_darker: "#1E1D1B",
