@@ -6,9 +6,9 @@ import { Container, Input } from "@/app/components";
 
 export const Hero = () => {
   return (
-    <section className="w-full h-screen pt-32 bg-neutral_darker">
+    <section className="w-full min-h-screen flex bg-neutral_darker lg:pt-32">
       <Container>
-        <div className="w-1/2 flex justify-center">
+        <div className="flex items-center min-h-screen lg:w-1/2 lg:min-h-0 lg:items-start">
           <div>
             <Image src="/logo.svg" alt="Arbif - Logo" width={220} height={80} />
 
@@ -25,13 +25,24 @@ export const Hero = () => {
           </div>
         </div>
 
-        <div className="w-1/2 relative flex justify-center">
-          <div className="max-w-475 px-6 py-8">
-            <h2
-              className={`${LIBRE_BASKERVILLE.className} text-2xl text-primary font-bold`}
-            >
-              Quanto você precisa?
-            </h2>
+        <div className="lg:w-1/2 relative flex lg:justify-end">
+          <div className="px-6 py-8 bg-proposal-bg bg-no-repeat bg-contain bg-bottom lg:max-w-475">
+            <div className="flex justify-between">
+              <h2
+                className={`${LIBRE_BASKERVILLE.className} text-2xl text-primary font-bold`}
+              >
+                Quanto você precisa?
+              </h2>
+
+              <div className="flex gap-x-2">
+                <div className="w-6 h-6 bg-primary rounded-full text-center text-neutral_dark font-medium">
+                  1
+                </div>
+                <div className="w-6 h-6 bg-neutral_dark rounded-full text-center text-neutral_lightest font-medium">
+                  2
+                </div>
+              </div>
+            </div>
 
             <form className="mt-10">
               <Input
@@ -39,6 +50,7 @@ export const Hero = () => {
                 label="Valor do crédito"
                 placeholder="R$ 50.000,00"
               />
+
               <Input
                 name="payment_term"
                 label="Prazo de pagamento"
@@ -47,7 +59,7 @@ export const Hero = () => {
               />
             </form>
 
-            <p className="mt-6 text-sm font-normal text-neutral_light">
+            <p className="mt-6 text-xs font-normal text-neutral_light lg:text-sm">
               * O Banco Arbif é meramente fictício, criado com o objetivo de
               praticar conceitos de desenvolvimento de software. Nenhuma
               informação aqui transmitida possui veracidade legal, assim como
