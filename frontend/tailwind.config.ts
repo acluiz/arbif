@@ -8,9 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      width: {
+        "475": "475px",
+      },
       maxWidth: {
         "330": "330px",
-        "475": "475px",
       },
       colors: {
         primary: "#FFA56A",

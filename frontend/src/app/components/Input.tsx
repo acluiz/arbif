@@ -1,4 +1,11 @@
-export const Input = ({ name, label, placeholder, classname }) => {
+interface InputProps {
+  name: string;
+  label: string;
+  placeholder: string;
+  classname?: string;
+}
+
+export const Input = ({ name, label, placeholder, classname }: InputProps) => {
   return (
     <fieldset className={`flex flex-col ${classname}`}>
       <label
