@@ -1,0 +1,7 @@
+$tablet-size: 768px;
+$desktop-size: 1024px;
+
+$breakpoints: (
+  tablet: $tablet-size,
+  desktop: $desktop-size,
+);
