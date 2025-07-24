@@ -10,17 +10,19 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: $spacing-sm;
-    padding: $spacing-lg $spacing-sm;
+    gap: $spacing-md;
+    padding: $spacing-xl $spacing-sm;
 
     @include minScreenSize(desktop) {
       flex-direction: row;
       align-items: center;
+      justify-content: space-between;
     }
   }
 
   &__logo {
     width: 150px;
+    height: auto;
 
     @include minScreenSize(desktop) {
       width: 200px;
@@ -32,7 +34,7 @@
     margin-top: $spacing-sm;
 
     @include minScreenSize(desktop) {
-      margin-top: $spacing-lg;
+      margin-top: $spacing-xl;
     }
 
     & > span {
@@ -50,6 +52,16 @@
         font-size: $font-size-xl;
         line-height: $line-height-xl;
       }
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: grid;
+    gap: $spacing-sm;
+
+    @include minScreenSize(desktop) {
+      max-width: 450px;
     }
   }
 }

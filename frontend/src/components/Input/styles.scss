@@ -1,0 +1,53 @@
+@use "@/styles/tokens/" as *;
+@use "@/styles/mixins/typography" as *;
+
+.field {
+  width: 100%;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: $spacing-quarck;
+
+  &__label {
+    @include typography($font-size-sm, $line-height-sm, $font-weight-medium);
+    transition: all ease-in-out 200ms;
+  }
+
+  &__input {
+    @include typography($font-size-sm, $line-height-sm);
+
+    width: 100%;
+    outline: none;
+    transition: all ease-out 300ms;
+    -webkit-transition: all ease-out 300ms;
+    background-color: transparent;
+    border-radius: 8px;
+    margin-top: $spacing-quarck;
+    padding: $spacing-xs $spacing-micro;
+    border: 1px solid $color-neutral-darkest;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $color-neutral-darkest;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+      -webkit-transition: background-color 5000s ease-in-out 0s;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &.field--filled,
+  &:focus-within {
+    .field {
+      &__label {
+        color: $color-secondary;
+      }
+
+      &__input {
+        border-color: $color-secondary;
+      }
+    }
+  }
+}
