@@ -1,5 +1,55 @@
-@use "@/styles/mixins/typography" as *;
+@use "@/styles/tokens" as *;
+@use "@/styles/mixins" as *;
 
-h1 {
-  @include typography();
+.hero {
+  background-color: $color-neutral-bright;
+
+  &__wrapper {
+    min-height: 100dvh;
+    max-width: 1252px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+    padding: $spacing-lg $spacing-sm;
+
+    @include minScreenSize(desktop) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    width: 150px;
+
+    @include minScreenSize(desktop) {
+      width: 200px;
+    }
+  }
+
+  &__title {
+    @include typography($font-size-md, $line-height-md);
+    margin-top: $spacing-sm;
+
+    @include minScreenSize(desktop) {
+      margin-top: $spacing-lg;
+    }
+
+    & > span {
+      display: block;
+
+      @include typography(
+        $font-size-lg,
+        $line-height-lg,
+        $font-weight-bold,
+        $color-secondary,
+        $font-family-primary
+      );
+
+      @include minScreenSize(desktop) {
+        font-size: $font-size-xl;
+        line-height: $line-height-xl;
+      }
+    }
+  }
 }

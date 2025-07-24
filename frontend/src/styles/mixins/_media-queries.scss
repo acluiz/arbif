@@ -1,17 +1,13 @@
 @use "@/styles/tokens/breakpoints" as *;
 
-@mixin minScreenSize($keys...) {
-  @each $key in $keys {
-    @media (min-width: map-get($breakpoints, $key)) {
-      @content;
-    }
+@mixin minScreenSize($key) {
+  @media (min-width: map-get($breakpoints, $key)) {
+    @content;
   }
 }
 
-@mixin maxScreenSize($keys...) {
-  @each $key in $keys {
-    @media (max-width: calc(map-get($breakpoints, $key) - 1px)) {
-      @content;
-    }
+@mixin maxScreenSize($key) {
+  @media (max-width: calc(map-get($breakpoints, $key) - 1px)) {
+    @content;
   }
 }
