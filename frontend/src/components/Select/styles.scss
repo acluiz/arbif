@@ -1,13 +1,10 @@
-@use "@/styles/tokens/" as *;
+@use "@/styles/tokens" as *;
 @use "@/styles/mixins/typography" as *;
 
 .select {
-  width: 100%;
-  border: none;
-  outline: none;
-  display: flex;
-  flex-direction: column;
   position: relative;
+  border: none;
+  display: grid;
   gap: $spacing-quarck;
 
   &::after {
@@ -15,7 +12,7 @@
     width: $spacing-sm;
     height: $spacing-sm;
     right: $spacing-micro;
-    bottom: $spacing-nano;
+    top: $spacing-xxl;
     padding-left: $spacing-nano;
     position: absolute;
     transform: translateY(-50%);
@@ -28,43 +25,35 @@
 
   &__label {
     @include typography($font-size-sm, $line-height-sm, $font-weight-medium);
-    transition: all ease-in-out 200ms;
   }
 
   &__input {
-    @include typography($font-size-sm, $line-height-sm);
+    @include typography(
+      $font-size-sm,
+      $line-height-sm,
+      $font-weight-regular,
+      $color-neutral-dark
+    );
 
-    width: 100%;
     outline: none;
     appearance: none;
-    transition: all ease-out 300ms;
-    -webkit-transition: all ease-out 300ms;
-    background-color: transparent;
     border-radius: 8px;
-    margin-top: $spacing-quarck;
+    background-color: transparent;
     padding: $spacing-xs $spacing-micro;
     border: 1px solid $color-neutral-darkest;
 
-    &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus {
-      -webkit-text-fill-color: $color-neutral-darkest;
-      -webkit-box-shadow: 0 0 0px 1000px transparent inset;
-      -webkit-transition: background-color 5000s ease-in-out 0s;
-      transition: background-color 5000s ease-in-out 0s;
+    &--filled {
+      color: $color-neutral-darkest;
     }
   }
 
-  &.field--filled,
-  &:focus-within {
-    .field {
-      &__label {
-        color: $color-secondary;
-      }
+  &:focus-within & {
+    &__label {
+      color: $color-secondary;
+    }
 
-      &__input {
-        border-color: $color-secondary;
-      }
+    &__input {
+      border-color: $color-secondary;
     }
   }
 }

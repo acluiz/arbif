@@ -21,15 +21,15 @@ type InputMode =
 type InputProps = {
   id: string;
   label: string;
-  mask: string;
+  mask?: string;
   name: string;
   placeholder: string;
   type: string;
   control: Control;
-  mode: InputMode;
-  rules: RegisterOptions;
-  onBlur: ({ name, value }: { name: string; value: string }) => void;
-  onChange: ({ name, value }: { name: string; value: string }) => void;
+  mode?: InputMode;
+  rules?: RegisterOptions;
+  onBlur?: ({ name, value }: { name: string; value: string }) => void;
+  onChange?: ({ name, value }: { name: string; value: string }) => void;
 };
 
 export const Input = ({
@@ -59,13 +59,7 @@ export const Input = ({
         },
         fieldState: { error },
       }) => (
-        <fieldset
-          className={`
-                field
-                ${value && ["field--filled"]}
-                ${error && ["field--error"]}
-              `}
-        >
+        <fieldset className={`field ${error && ["field--error"]}`}>
           <label htmlFor={id || name} className="field__label">
             {label}
           </label>
@@ -111,8 +105,6 @@ export const Input = ({
               }}
             />
           )}
-
-          {/* <ErrorMessage text={error?.message} isVisible={error} /> */}
         </fieldset>
       )}
     />

@@ -55,6 +55,49 @@
     }
   }
 
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__steps {
+    display: flex;
+    gap: $spacing-nano;
+  }
+
+  &__stepNumber {
+    @include typography(
+      $font-size-xxxs,
+      $line-height-xxxs,
+      $font-weight-medium,
+      $color-neutral-brightest
+    );
+
+    display: block;
+    align-content: center;
+    text-align: center;
+    border-radius: 50%;
+    width: $spacing-md;
+    height: $spacing-md;
+    background-color: $color-neutral-light;
+
+    &:first-of-type {
+      background-color: $color-primary;
+    }
+  }
+
+  &__stepTitle {
+    @include typography(
+      $font-size-md,
+      $line-height-md,
+      $font-weight-bold,
+      $color-secondary,
+      $font-family-primary
+    );
+  }
+
   &__form {
     width: 100%;
     display: grid;
@@ -63,5 +106,14 @@
     @include minScreenSize(desktop) {
       max-width: 450px;
     }
+  }
+
+  &__terms {
+    @include typography($font-size-xxxs, $line-height-xxxs);
+    margin-top: $spacing-nano;
+  }
+
+  &__cta {
+    margin-top: $spacing-lg;
   }
 }

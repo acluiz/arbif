@@ -34,9 +34,7 @@ export const Select = ({
         field: { ref, value, onChange, onBlur },
         fieldState: { error },
       }) => (
-        <fieldset
-          className={`select select--filled ${error && "select--error"}`}
-        >
+        <fieldset className={`select ${error && "select--error"}`}>
           <label htmlFor={name} className="select__label">
             {label}
           </label>
@@ -44,7 +42,7 @@ export const Select = ({
           <select
             id={name}
             value={value ?? ""}
-            className="select__input"
+            className={`select__input ${value && ["select__input--filled"]}`}
             onChange={onChange}
             onBlur={onBlur}
             ref={ref}
