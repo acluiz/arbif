@@ -6,7 +6,7 @@ import {
 
 import "./styles.scss";
 
-type OptionProps = { label: string; value: string };
+type OptionProps = { label: string; value: string | number };
 
 type SelectProps = {
   id?: string;

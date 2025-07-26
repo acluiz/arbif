@@ -1,0 +1,45 @@
+@use "@/styles/tokens" as *;
+@use "@/styles/mixins" as *;
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-xl;
+
+  &__steps {
+    display: flex;
+    gap: $spacing-nano;
+  }
+
+  &__step {
+    @include typography(
+      $font-size-xxxs,
+      $line-height-xxxs,
+      $font-weight-medium,
+      $color-neutral-brightest
+    );
+
+    display: block;
+    align-content: center;
+    text-align: center;
+    border-radius: 50%;
+    width: $spacing-md;
+    height: $spacing-md;
+    background-color: $color-neutral-light;
+
+    &--active {
+      background-color: $color-primary;
+    }
+  }
+
+  &__title {
+    @include typography(
+      $font-size-md,
+      $line-height-md,
+      $font-weight-bold,
+      $color-secondary,
+      $font-family-primary
+    );
+  }
+}

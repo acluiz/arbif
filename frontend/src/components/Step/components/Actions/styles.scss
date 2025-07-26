@@ -1,0 +1,10 @@
+@use "@/styles/tokens/spacing" as *;
+
+.actions {
+  display: flex;
+  margin-top: $spacing-xl;
+
+  &__button {
+    flex: 1;
+  }
+}

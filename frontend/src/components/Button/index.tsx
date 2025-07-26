@@ -4,7 +4,7 @@ import "./styles.scss";
 
 type ButtonProps = {
   id: string;
-  customClass: string;
+  customClass?: string;
   type: "submit" | "reset" | "button";
   children: ReactNode;
   onClick?: () => void;
